@@ -1,0 +1,19 @@
+<?php
+
+$this->headTitle("Delete");
+
+$this->escapeHtml("Confirm Delete");
+?>
+<p>Are you sure you want to delete??</p>
+<?php echo $this->escapeHtml($book->title); ?>
+<?php
+
+$url=$this->url('book',array('action'=>'delete','id'=>$this->id));
+
+?>
+
+<form method="POST" action="<?php echo $url; ?>" >
+	<input type="hidden" name="id" value="<?php echo $book->id;?>">
+	<input type="submit" name="del" value="Yes">
+	<input type="submit" name="del" value="No">
+</form>
